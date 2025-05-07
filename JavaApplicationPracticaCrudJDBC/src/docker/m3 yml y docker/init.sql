@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS tienda;
+USE tienda;
+
+CREATE TABLE IF NOT EXISTS categoria (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS producto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  precio DOUBLE NOT NULL,
+  categoria_id INT,
+  FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+);
